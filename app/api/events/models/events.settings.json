@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Events"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "datetime": {
+      "type": "datetime"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "location": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "pictures": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}
